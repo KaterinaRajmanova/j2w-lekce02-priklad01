@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Hod kostkou</title>
@@ -8,14 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png"> //proč se musí upravovat i tyto tři cesty na th:href...
+
+
 </head>
 <body>
 <div>
     <div>
-        <img class="kostka" src="/images/kostka-1.svg" />
+        <img class="kostka" th:src="${obrazek}" />
     </div>
-    <div>Padlo číslo: <span>1</span></div>
+    <div>Padlo číslo: <span th:text="${hozeneCislo}">1</span></div>
 </div>
 </body>
 </html>
